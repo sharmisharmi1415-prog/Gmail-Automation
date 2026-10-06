@@ -1,0 +1,91 @@
+{
+  "name": "gmail automation",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "ff94499e-c2de-421c-a73f-f2503c91b1a3",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "sendTo": "estharqueen19@gmail.com",
+        "subject": "helllo esthar",
+        "message": "how are you?",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        224,
+        0
+      ],
+      "id": "a6dcb435-6874-436b-8c63-b3446e2bc269",
+      "name": "Send a message",
+      "webhookId": "4559427d-7281-413f-bd4b-74ca6c8c063d",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "sAi1SYJ1X8DDSfyU",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 3,
+              "triggerAtMinute": 5
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        368,
+        240
+      ],
+      "id": "0f06cbb8-44ea-4b98-abd2-1c7fa2a9b37d",
+      "name": "Schedule Trigger"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "15607b81-a7d9-460a-be52-c998cd0e7f0b",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "f9db918e0ea748c74e614b3ccc769c19554721e7e2b1aec0ff8d17f9b404b5df"
+  },
+  "nodeGroups": [],
+  "id": "pLaiFEL38Xww70aE",
+  "tags": []
+}
